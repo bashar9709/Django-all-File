@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equi="x-UA-Comatible"content="IE=edge">
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <tittle><h1>Contact</h1></tittle>
+    </head>
+<body>
+    <h1>We are inside app</h1>
+    <h1>Author name: {{name}}</h1>
+    {% if age >= 18 %}
+    <p>Vai tmi driving license nite parba</p>
+    {% else %}
+    <p>tmi shishu. so tmi bashai jaw</p>
+    {% endif %}
+
+    {% if marks >= 80 %}
+    <p>Vai tmi golden A+ paiso.</p>
+    {% elif marks >= 70 and marks <= 89 %}
+    <p>Vai tmi A paiso.</p>
+    {% elif marks >= 40 and marks <= 69 %}
+    <p>Vai tmi shudu pass korso.</p>
+    {% else %}
+    <p>Vai tmi fail korso</p>
+    {% endif %}
+
+    <table border="1" width=500>
+        <tr>
+            <th>ID</th>
+            <th>Course</th>
+            <th>Teacher</th>
+        </tr>
+        {% for i in courses %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.course}}</td>
+            <td>{{i.teacher}}</td>
+        </tr>
+        {% endfor %}    
+    </table>
+    
+    
+    <!--Filter in DTL-->
+    
+    <!-- Add value-->
+    <h1>{{ marks | add:"2" }}</h1>
+    <!--Divisible check-->
+    <h1>{{ marks | divisibleby:"2" }}</h1>
+    <!--Length-->
+    <h1>{{ name | length}}</h1>
+    <!--word count-->
+    <h1>{{ name | wordcount }}</h1>
+    <!--Truncate word-->
+    <h1>{{ blog | truncatewords:5 }}</h1>
+    <h1>{{ blog | truncatechars:20}}</h1>
+    <!--Make List-->
+    <h1>{{ name | make_list }}</h1>
+    <!--upper-->
+    <h1>{{ name | upper }}</h1>
+    <!--lower-->
+    <h1>{{ name | lower }}</h1>
+    <!--Join-->
+    <!--join: "//"-->
+    <h1>{{lst | join:" ,"}}</h1>
+
+
+</body>
+</html>            
+
+
